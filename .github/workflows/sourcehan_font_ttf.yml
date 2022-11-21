@@ -58,11 +58,11 @@ jobs:
           keep_latest: 5
           delete_tags: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
 
       - name: Release
         uses: ncipollo/release-action@v1
         with:
           artifacts: "*.zip"
           tag: ${{ env.DATE }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.G_TOKEN }}
