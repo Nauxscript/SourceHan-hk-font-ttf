@@ -38,11 +38,11 @@ jobs:
           # 解压
           unzip 11_SourceHanSerifHC
           # 转换
-          otf2ttf OTF/TraditionalChineseHK/*.otf
+          otf2ttf OTF/TraditionalChineseHK/SourceHanSerifHC-Bold.otf
           # 获取版本
           version="$(curl --silent "https://api.github.com/repos/adobe-fonts/source-han-serif/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')"
           mkdir font
-          mv OTF/TraditionalChineseHK/*.ttf font
+          mv OTF/TraditionalChineseHK/SourceHanSerifHC-Bold.ttf font
           # 压缩
           cd font
           zip -9 -r -UN=UTF8 ../TraditionalChineseHK_TTF_$version.zip *.ttf
